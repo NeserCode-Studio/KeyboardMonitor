@@ -11,18 +11,24 @@
 				margin: 0;
 			}
 			.app {
-				width: calc(100% - 2px);
+				width: calc(100% - 6px);
+				max-width: calc(100% - 2px);
 				height: calc(100vh - 2px);
+				padding: 0 2px;
 				display: flex;
 				justify-content: center;
 				align-items: center;
 
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+
 				font-family: Consolas, monospace;
-				font-size: 16px;
-				font-weight: 900;
+				font-size: 12px;
+				font-weight: 300;
 				user-select: none;
 
-				border: 1px solid #000;
+				border: 1px solid #0f6777;
 			}
 		</style>
 		<script type="module" src="/src/main.ts" defer></script>

@@ -162,13 +162,7 @@ fn main() {
             };
 
             tauri::async_runtime::spawn(async move {
-                ws_listen("127.0.0.1:3012", |out| {
-                    move |msg| {
-                        println!("[Ws Message] {}", msg);
-                        out.broadcast(msg)
-                    }
-                })
-                .unwrap();
+                ws_listen("127.0.0.1:3012", |out| move |msg| out.broadcast(msg)).unwrap();
             });
 
             tauri::async_runtime::spawn(async move {

@@ -1,6 +1,6 @@
 [package]
 name = "keyboard-monitor"
-version = "1.0.0-alpha.1"
+version = "1.0.0-beta.3"
 description = "Keyboard monitor service."
 authors = ["nesercode"]
 license = "GUNv3"
@@ -13,7 +13,7 @@ edition = "2021"
 tauri-build = { version = "1.4", features = [] }
 
 [dependencies]
-tauri = { version = "1.4", features = [ "window-all", "path-all", "fs-all", "system-tray", "shell-open"] }
+tauri = { version = "1.4", features = ["window-all", "path-all", "fs-all", "system-tray", "shell-open"] }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 rdev = "0.5.3"

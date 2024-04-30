@@ -8,7 +8,7 @@
 	},
 	"package": {
 		"productName": "Keyboard Monitor",
-		"version": "1.0.0-beta.1"
+		"version": "1.0.0-beta.3"
 	},
 	"tauri": {
 		"allowlist": {

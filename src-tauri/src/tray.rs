@@ -6,6 +6,8 @@ use tauri::{
 // 托盘菜单
 pub fn menu() -> SystemTray {
     let tray_menu = SystemTrayMenu::new()
+        .add_item(CustomMenuItem::new("open_log".to_string(), "启用日志"))
+        .add_item(CustomMenuItem::new("close_log".to_string(), "禁用日志"))
         .add_item(CustomMenuItem::new("show_log".to_string(), "查看日志")) // 显示应用日志
         .add_native_item(SystemTrayMenuItem::Separator) // 分割线
         .add_item(CustomMenuItem::new("hide".to_string(), "隐藏")) // 隐藏应用窗口
@@ -36,6 +38,12 @@ pub fn handler(app: &AppHandle, event: SystemTrayEvent) {
             }
             "show_log" => {
                 let _ = window.emit("show-log", "");
+            }
+            "open_log" => {
+                let _ = window.emit("open-log", "");
+            }
+            "close_log" => {
+                let _ = window.emit("close-log", "");
             }
             _ => {}
         },
